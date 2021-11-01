@@ -4,6 +4,7 @@ go 1.17
 
 require (
 	github.com/labstack/echo/v4 v4.6.1
+	github.com/lib/pq v1.10.3
 	gopkg.in/olahol/melody.v1 v1.0.0-20170518105555-d52139073376
 )
 

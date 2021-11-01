@@ -1,0 +1,20 @@
+CREATE SCHEMA nuxtechochat;
+SET search_path = nuxtechochat;
+CREATE TABLE users (
+    uid VARCHAR(32) NOT NULL,
+    PRIMARY KEY (uid)
+);
+
+CREATE TABLE room (
+    rid VARCHAR(32) NOT NULL,
+    PRIMARY KEY (rid)
+);
+
+CREATE TABLE chat (
+    message TEXT NOT NULL,
+    time VARCHAR(32) NOT NULL,
+    rid VARCHAR(32) NOT NULL,
+    uid VARCHAR(32) NOT NULL,
+    FOREIGN KEY (uid) REFERENCES users(uid) ON DELETE CASCADE ON UPDATE CASCADE,
+    FOREIGN KEY (rid) REFERENCES room(rid) ON DELETE CASCADE ON UPDATE CASCADE
+);
